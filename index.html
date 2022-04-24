@@ -23,33 +23,72 @@
     <form action="">
       
       <main>
-        <h3>Informações do Evento</h3>
-        <label for="">Título do Evento</label>
-        <input type="text">
-        <label for="">Link do Evento</label>
-        <input type="text">
-        <label for="">WhatsApp para contato</label>
-        <input type="text">
-        <label for="">Informações extras</label>
-        <input type="text">
-        <label for="">Categoria</label>
-        <input type="text">
+        <fieldset>
+          <legend>Informações do Evento</legend>
+          <div class="inputWrapper">
+            <label for="eventTitle">Título do Evento<span>(mínimo 8 caracteres)</span></label>
+            <input type="text" id="eventTitle">
+          </div>
+          <div class="inputWrapper">
+            <label for="eventLink">Link do Evento<span>(comece com https://)</span></label>
+            <input type="url" id="eventLink">
+          </div>
+          <div class="inputWrapper">
+            <label for="eventWhatsApp">WhatsApp para contato<span>(somente números)</span></label>
+            <input type="number" id="eventWhatsApp">
+          </div>
+          <div class="inputWrapper">
+            <label for="eventInfo">Informações extras</label>
+            <textarea id="eventInfo" ></textarea>
+          </div>
+          <div class="inputWrapper">
+            <label for="eventCategory">Categoria</label>
+            <select id="eventCategory">
+              <option value="" selected disabled hidden>Selecione uma Categoria de Evento</option>
+              <option value="">Casamento</option>
+              <option value="">Show Ao Vivo</option>
+              <option value="">Palestra</option>
+              <option value="">Convenção</option>
+              <option value="">Despedida de Solteiro(a)</option>
+              <option value="">Formatura</option>
+              <option value="">Mentoria</option>
+              <option value="">Podcast</option>
+              <option value="">Live</option>
+            </select>
+          </div>
+        </fieldset>
         
-        <h3>Privacidade</h3>
-        <label for="">E-mail do administrador</label>
-        <input type="text">
-        <label for="">Senha de acesso para os participantes</label>
-        <input type="text">
-        <input type="text">
-        <label for="">Evento Privado</label>
+        <fieldset>
+          <legend>Privacidade</legend>
+          <div class="inputWrapper">
+            <label for="eventEmail">E-mail do administrador<span>(digite um email válido)</span></label>
+            <input type="email" id="eventEmail">
+          </div>
+          <div class="inputWrapper">
+            <label for="eventPassword">Senha de acesso para os participantes<span>(mínimo 8 caracteres)</span></label>
+            <input type="password" id="eventPassword">
+          </div>
+          <div class="inputWrapper checkBoxBrake">
+            <input type="checkbox" id="eventCheckbox">
+            <label for="eventCheckbox" id="checkboxLabel">Evento Privado</label>
+          </div>
+        </fieldset>
         
-        <h3>Dia e hora</h3>
-        <label for="">Data</label>
-        <input type="text">
-        <label for="">Das</label>
-        <input type="text">
-        <label for="">Até</label>
-        <input type="text">
+        <fieldset id="dayAndHour">
+          <legend>Dia e hora</legend>
+          <div class="inputWrapper day">
+            <label for="eventDate">Data</label>
+            <input id="eventDate" type="date">
+          </div>
+          <div class="inputWrapper hour">
+            <label for="eventDateStart">Das</label>
+            <input id="eventDateStart" type="time">
+          </div>
+          <div class="inputWrapper hour">
+            <label for="eventDateEnd">Até</label>
+            <input id="eventDateEnd" type="time">
+          </div>
+        </fieldset>
       </main>
       <footer>
         <input id="button" type="submit" value="Salvar Evento">
